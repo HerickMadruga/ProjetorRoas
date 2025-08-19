@@ -1,0 +1,298 @@
+/* Estilos Gerais do Container e Título */
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+  letter-spacing: 1px;
+}
+
+/* Estilos da Imagem */
+.Imagemm {
+  width: 200px;
+  height: auto;
+}
+
+/* Estilos dos Campos de Input */
+.inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.inputs label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.inputs input {
+  padding: 0.7rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  background: #fefefe;
+}
+
+.inputs input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
+  background: #fff;
+}
+
+/* Estilos do Bloco de Destaque do ROAS */
+.roas-destaque {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #003366;
+  color: white;
+  border-radius: 7px;
+  padding: 10px 15px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 2rem auto;
+  width: fit-content;
+}
+
+/* Estilos dos Resultados */
+.resultados {
+  background: #ffffff;
+  padding: 1.8rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.resultados h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: #1a1a1a;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.6rem;
+}
+
+.resultados p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.resultados p strong {
+  color: #111827;
+}
+
+/* Estilos de Avisos */
+.aviso {
+  font-size: 0.8em;
+  color: #888;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.aviso-roas {
+  font-size: 0.9em;
+  font-style: italic;
+  color: #24089e;
+  margin-top: 5px;
+}
+
+.general-aviso {
+  font-weight: bold;
+  color: #d32f2f;
+  margin: 20px auto;
+}
+
+/* Estilos dos Botões de Alternância (Summary e Chart) */
+.summaryContainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.toggleButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggleButton:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Estilos do Container de Gráficos e Botões */
+.chartToggle {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.chartButton {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.chartButton.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.chartButton:hover:not(.active) {
+  background-color: #e9e9e9;
+}
+
+/* Estilos do Conteúdo (Summary) */
+.content {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+  text-align: left;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.content h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.content li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Estilos do Componente de Análise */
+.insightsContainer {
+  margin-top: 40px;
+  border-top: 2px solid #ccc;
+  padding-top: 20px;
+  text-align: left;
+}
+
+.insightsList {
+  margin-top: 15px;
+}
+
+.insight {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-left: 5px solid;
+}
+
+.insight p {
+  margin: 0;
+  line-height: 1.4;
+  font-size: 0.9em;
+}
+
+.success {
+  background-color: #e6f7ec;
+  border-color: #38c172;
+  color: #216d47;
+}
+
+.warning {
+  background-color: #fff8e1;
+  border-color: #f7b924;
+  color: #926f20;
+}
+
+.info {
+  background-color: #e3f2fd;
+  border-color: #1976d2;
+  color: #12559b;
+}
+
+/* Estilos para o status do input */
+.input-group.success input {
+    border-color: #28a745;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.25);
+}
+
+.input-group.warning input {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+}
+
+.input-group.info input {
+    border-color: #17a2b8;
+    box-shadow: 0 0 0 3px rgba(23, 162, 184, 0.25);
+}
+
+
+/* ----- MEDIA QUERY PARA RESPONSIVIDADE EM TELAS MENORES ----- */
+@media (max-width: 600px) {
+  /* Diminui o padding do container */
+  .container {
+    padding: 1.5rem;
+  }
+
+  /* Muda o layout de grid para uma coluna */
+  .inputs {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Ajusta o tamanho da fonte de títulos */
+  .container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .resultados h2 {
+    font-size: 1.2rem;
+  }
+  
+  /* Reduz o tamanho da fonte do destaque do ROAS */
+  .roas-destaque {
+    font-size: 1.8rem;
+    padding: 8px 12px;
+  }
+
+  /* Diminui o tamanho da imagem */
+  .Imagemm {
+    width: 150px;
+  }
+}
