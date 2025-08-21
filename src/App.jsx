@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import RoasCalculator from "./components/RoasCalculator";
 import IaPage from "./components/IaPage";
 

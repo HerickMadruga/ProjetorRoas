@@ -1,298 +1,202 @@
-/* Estilos Gerais do Container e Título */
+/* src/components/RoasCalculator.module.css */
+
 .container {
   max-width: 700px;
-  margin: 2rem auto;
-  padding: 2.5rem;
+  margin: 1rem auto; /* Reduzida margem para telas menores */
+  padding: 1.5rem;   /* Reduzido padding para telas menores */
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(145deg, #ffffff, #f1f5f9);
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
 }
 
 .container h1 {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
   color: #1a1a1a;
-  letter-spacing: 1px;
 }
 
-/* Estilos da Imagem */
 .Imagemm {
-  width: 200px;
+  width: 100%;
+  max-width: 350px; /* Reduzido para melhor encaixe */
   height: auto;
+  display: block;
+  margin: 0 auto 1.5rem auto;
 }
 
-/* Estilos dos Campos de Input */
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.inputSection {
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.sectionTitle {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  color: #003366;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
 .inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem 1.8rem;
-  margin-bottom: 2.5rem;
 }
 
-.inputs label {
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.input-group {
   display: flex;
   flex-direction: column;
-  font-size: 0.95rem;
+}
+
+.input-group label {
+  font-size: 0.9rem;
   color: #555;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .inputs input {
-  padding: 0.7rem;
+  padding: 0.8rem;
   font-size: 1rem;
-  margin-top: 0.5rem;
   border: 1px solid #d1d5db;
   border-radius: 8px;
-  transition: all 0.25s ease;
   background: #fefefe;
+  font-family: 'Poppins', sans-serif;
+  width: 100%; /* Garante que o input não ultrapasse o container */
+  box-sizing: border-box; /* Garante que padding não aumente a largura */
+}
+
+.inputs input:disabled {
+  background-color: #f3f4f6;
+  color: #6b7280;
 }
 
 .inputs input:focus {
   outline: none;
   border-color: #3b82f6;
   box-shadow: 0 0 6px rgba(59, 130, 246, 0.4);
-  background: #fff;
 }
 
-/* Estilos do Bloco de Destaque do ROAS */
-.roas-destaque {
+/* ESTILOS DO INTERRUPTOR CORRIGIDOS PARA CELULAR */
+.modeToggleSection {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Coluna no celular */
   align-items: center;
-  background-color: #003366;
-  color: white;
-  border-radius: 7px;
-  padding: 10px 15px;
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin: 2rem auto;
-  width: fit-content;
-}
-
-/* Estilos dos Resultados */
-.resultados {
-  background: #ffffff;
-  padding: 1.8rem;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.resultados h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.2rem;
-  color: #1a1a1a;
-  border-bottom: 2px solid #e5e7eb;
-  padding-bottom: 0.6rem;
-}
-
-.resultados p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  color: #4b5563;
-}
-
-.resultados p strong {
-  color: #111827;
-}
-
-/* Estilos de Avisos */
-.aviso {
-  font-size: 0.8em;
-  color: #888;
-  margin-top: 5px;
-  font-style: italic;
-}
-
-.aviso-roas {
-  font-size: 0.9em;
-  font-style: italic;
-  color: #24089e;
-  margin-top: 5px;
-}
-
-.general-aviso {
-  font-weight: bold;
-  color: #d32f2f;
-  margin: 20px auto;
-}
-
-/* Estilos dos Botões de Alternância (Summary e Chart) */
-.summaryContainer {
-  margin-top: 20px;
+  gap: 0.5rem; /* Espaçamento entre os elementos */
   text-align: center;
-}
-
-.toggleButton {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.toggleButton:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-}
-
-/* Estilos do Container de Gráficos e Botões */
-.chartToggle {
-  margin: 20px auto;
-  text-align: center;
-}
-
-.chartButton {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  padding: 10px 15px;
-  margin: 0 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9em;
-  font-weight: bold;
-  color: #555;
-  transition: all 0.3s ease;
-}
-
-.chartButton.active {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
-}
-
-.chartButton:hover:not(.active) {
-  background-color: #e9e9e9;
-}
-
-/* Estilos do Conteúdo (Summary) */
-.content {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 20px;
-  margin-top: 15px;
-  text-align: left;
-  transition: all 0.5s ease-in-out;
-  opacity: 1;
-  max-height: 500px;
-  overflow: hidden;
-}
-
-.content h3 {
-  margin-top: 0;
-  color: #333;
-}
-
-.content ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.content li {
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-
-/* Estilos do Componente de Análise */
-.insightsContainer {
-  margin-top: 40px;
-  border-top: 2px solid #ccc;
-  padding-top: 20px;
-  text-align: left;
-}
-
-.insightsList {
-  margin-top: 15px;
-}
-
-.insight {
-  padding: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  padding: 10px;
+  background-color: #eef2f7;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  border-left: 5px solid;
 }
 
-.insight p {
-  margin: 0;
-  line-height: 1.4;
-  font-size: 0.9em;
+.modeToggleSection span {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.9rem;
 }
 
-.success {
-  background-color: #e6f7ec;
-  border-color: #38c172;
-  color: #216d47;
+.toggleSwitchContainer {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  flex-shrink: 0; /* Impede que o botão encolha */
 }
 
-.warning {
-  background-color: #fff8e1;
-  border-color: #f7b924;
-  color: #926f20;
+.toggleSwitchContainer input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.info {
-  background-color: #e3f2fd;
-  border-color: #1976d2;
-  color: #12559b;
+.toggleSwitch {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 28px;
 }
 
-/* Estilos para o status do input */
-.input-group.success input {
-    border-color: #28a745;
-    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.25);
+.toggleSwitch:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
 }
 
-.input-group.warning input {
-    border-color: #dc3545;
-    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+.toggleSwitchContainer input:checked + .toggleSwitch {
+  background-color: #28a745;
 }
 
-.input-group.info input {
-    border-color: #17a2b8;
-    box-shadow: 0 0 0 3px rgba(23, 162, 184, 0.25);
+.toggleSwitchContainer input:checked + .toggleSwitch:before {
+  transform: translateX(22px);
 }
 
+/* ... (o resto do seu CSS continua igual) ... */
+.roas-destaque { display: flex; justify-content: center; align-items: center; background-color: #003366; color: white; border-radius: 7px; padding: 10px 15px; font-size: 2.5rem; font-weight: bold; margin: 2rem auto; width: fit-content; }
+.resultados { background: #ffffff; padding: 1.8rem; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+.resultados h2 { font-size: 1.5rem; margin-bottom: 1.2rem; color: #1a1a1a; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.6rem; }
+.resultados p { margin: 0.7rem 0; font-size: 1rem; color: #4b5563; }
+.aviso, .aviso-roas { font-size: 0.85em; margin-top: 5px; font-style: italic; font-weight: 400; }
+.aviso-roas { color: #24089e; }
+.general-aviso { font-weight: bold; color: #d32f2f; margin: 20px auto; }
+.summaryContainer { margin-top: 20px; text-align: center; }
+.toggleButton { background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1em; font-weight: bold; transition: background-color 0.3s ease, transform 0.2s ease; }
+.toggleButton:hover { background-color: #0056b3; transform: translateY(-2px); }
+.chartToggle { margin: 20px auto; text-align: center; }
+.chartButton { background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px 15px; margin: 0 5px; border-radius: 5px; cursor: pointer; font-size: 0.9em; font-weight: bold; color: #555; transition: all 0.3s ease; }
+.chartButton.active { background-color: #007bff; color: white; border-color: #007bff; }
+.chartButton:hover:not(.active) { background-color: #e9e9e9; }
+.insightsContainer { margin-top: 40px; border-top: 2px solid #ccc; padding-top: 20px; text-align: left; }
+.insightsList { margin-top: 15px; }
+.insight { padding: 15px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 5px solid; }
+.insight p { margin: 0; line-height: 1.4; font-size: 0.9em; }
+.success { background-color: #e6f7ec; border-color: #38c172; color: #216d47; }
+.warning { background-color: #fff8e1; border-color: #f7b924; color: #926f20; }
+.info { background-color: #e3f2fd; border-color: #1976d2; color: #12559b; }
+.input-group.success input { border-color: #28a745; }
+.input-group.warning input { border-color: #dc3545; }
+.input-group.info input { border-color: #17a2b8; }
+.inputs .input-group:last-child:nth-child(odd) { grid-column: 1 / -1; }
 
-/* ----- MEDIA QUERY PARA RESPONSIVIDADE EM TELAS MENORES ----- */
+/* MELHORIAS NA RESPONSIVIDADE */
 @media (max-width: 600px) {
-  /* Diminui o padding do container */
-  .container {
-    padding: 1.5rem;
-  }
+  .container { padding: 1rem; }
+  .inputs { grid-template-columns: 1fr; }
+  .container h1 { font-size: 1.6rem; margin-bottom: 1.5rem; }
+  .resultados h2 { font-size: 1.2rem; }
+  .roas-destaque { font-size: 1.8rem; padding: 8px 12px; }
+}
 
-  /* Muda o layout de grid para uma coluna */
-  .inputs {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  /* Ajusta o tamanho da fonte de títulos */
-  .container h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .resultados h2 {
-    font-size: 1.2rem;
-  }
-  
-  /* Reduz o tamanho da fonte do destaque do ROAS */
-  .roas-destaque {
-    font-size: 1.8rem;
-    padding: 8px 12px;
-  }
-
-  /* Diminui o tamanho da imagem */
-  .Imagemm {
-    width: 150px;
+/* Adiciona regra para o modo toggle em telas maiores */
+@media (min-width: 601px) {
+  .modeToggleSection {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

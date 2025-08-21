@@ -1,0 +1,55 @@
+/* src/components/ExportControls.module.css */
+
+.exportContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.exportButtonPdf, .exportButtonCsv {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-align: center; /* Garante alinhamento do texto */
+}
+
+.exportButtonPdf {
+    background-color: #d32f2f;
+}
+
+.exportButtonPdf:hover {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+}
+
+.exportButtonCsv {
+    background-color: #28a745;
+}
+
+.exportButtonCsv:hover {
+    background-color: #1e7e34;
+    transform: translateY(-2px);
+}
+
+/* CORREÇÃO PARA OS BOTÕES DE EXPORTAÇÃO NO CELULAR */
+@media (max-width: 600px) {
+    .exportContainer {
+        flex-direction: column; /* Empilha os botões */
+        align-items: stretch; /* Faz os botões esticarem na largura */
+        gap: 0.8rem;
+    }
+    .exportButtonPdf, .exportButtonCsv {
+        width: 100%; /* Ocupa a largura total */
+        box-sizing: border-box; /* Garante que o padding não quebre o layout */
+    }
+}

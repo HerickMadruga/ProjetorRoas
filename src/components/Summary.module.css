@@ -1,13 +1,13 @@
-/* src/Summary.module.css */
+/* src/components/Summary.module.css */
 
 .container {
     margin-top: 20px;
-    text-align: center; /* Centraliza o conteúdo (incluindo o botão) */
+    text-align: center;
 }
 
 .toggleButton {
-    background-color: #007bff; /* Cor azul */
-    color: white; /* Cor do texto branca para contraste */
+    background-color: #007bff;
+    color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -18,8 +18,8 @@
 }
 
 .toggleButton:hover {
-    background-color: #0056b3; /* Um tom de azul mais escuro no hover */
-    transform: translateY(-2px); /* Pequeno efeito de elevação */
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 .content {
@@ -27,12 +27,13 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
-    margin-top: 15px; /* Aumenta o espaçamento do botão para o conteúdo */
+    margin-top: 15px;
     text-align: left;
     transition: all 0.5s ease-in-out;
     opacity: 1;
     max-height: 500px;
-    overflow: hidden;
+    /* LINHA CORRIGIDA ABAIXO */
+    overflow-y: auto; 
 }
 
 h3 {
